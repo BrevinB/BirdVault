@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1B2C3D4E5F60001000001AA /* BirdVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002AA /* BirdVaultApp.swift */; };
-		A1B2C3D4E5F60001000001BB /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002BB /* Bird.swift */; };
-		A1B2C3D4E5F60001000001CC /* BirdSighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002CC /* BirdSighting.swift */; };
-		A1B2C3D4E5F60001000001DD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002DD /* UserProfile.swift */; };
-		A1B2C3D4E5F60001000001EE /* SocialPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002EE /* SocialPost.swift */; };
-		A1B2C3D4E5F60001000001FF /* BirdDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002FF /* BirdDataService.swift */; };
 		A1B2C3D4E5F600010000010A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F600010000020A /* LocationManager.swift */; };
 		A1B2C3D4E5F600010000010B /* SocialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F600010000020B /* SocialService.swift */; };
 		A1B2C3D4E5F600010000010C /* BirdVaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F600010000020C /* BirdVaultTheme.swift */; };
@@ -29,16 +23,16 @@
 		A1B2C3D4E5F60001000001A7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002A7 /* ProfileView.swift */; };
 		A1B2C3D4E5F60001000001A8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002A8 /* OnboardingView.swift */; };
 		A1B2C3D4E5F60001000001A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002A9 /* Assets.xcassets */; };
+		A1B2C3D4E5F60001000001AA /* BirdVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002AA /* BirdVaultApp.swift */; };
 		A1B2C3D4E5F60001000001AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002AB /* Preview Assets.xcassets */; };
+		A1B2C3D4E5F60001000001BB /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002BB /* Bird.swift */; };
+		A1B2C3D4E5F60001000001CC /* BirdSighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002CC /* BirdSighting.swift */; };
+		A1B2C3D4E5F60001000001DD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002DD /* UserProfile.swift */; };
+		A1B2C3D4E5F60001000001EE /* SocialPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002EE /* SocialPost.swift */; };
+		A1B2C3D4E5F60001000001FF /* BirdDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001000002FF /* BirdDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A1B2C3D4E5F60001000002AA /* BirdVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdVaultApp.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F60001000002BB /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F60001000002CC /* BirdSighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdSighting.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F60001000002DD /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F60001000002EE /* SocialPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialPost.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F60001000002FF /* BirdDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDataService.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F600010000020A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F600010000020B /* SocialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialService.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F600010000020C /* BirdVaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdVaultTheme.swift; sourceTree = "<group>"; };
@@ -55,8 +49,14 @@
 		A1B2C3D4E5F60001000002A7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60001000002A8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60001000002A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1B2C3D4E5F60001000002AA /* BirdVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdVaultApp.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60001000002AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A1B2C3D4E5F60001000002AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B2C3D4E5F60001000002BB /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60001000002CC /* BirdSighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdSighting.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60001000002DD /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60001000002EE /* SocialPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialPost.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60001000002FF /* BirdDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdDataService.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60001000003AA /* BirdVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirdVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,66 +71,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A1B2C3D4E5F60001000005AA /* = root group */ = {
-			isa = PBXGroup;
-			children = (
-				A1B2C3D4E5F60001000005BB /* BirdVault */,
-				A1B2C3D4E5F60001000005CC /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		A1B2C3D4E5F60001000005CC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A1B2C3D4E5F60001000003AA /* BirdVault.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A1B2C3D4E5F60001000005BB /* BirdVault */ = {
-			isa = PBXGroup;
-			children = (
-				A1B2C3D4E5F60001000002AA /* BirdVaultApp.swift */,
-				A1B2C3D4E5F60001000005DD /* Models */,
-				A1B2C3D4E5F60001000005EE /* Services */,
-				A1B2C3D4E5F60001000005FF /* Theme */,
-				A1B2C3D4E5F600010000050A /* Views */,
-				A1B2C3D4E5F60001000002A9 /* Assets.xcassets */,
-				A1B2C3D4E5F60001000002AC /* Info.plist */,
-				A1B2C3D4E5F600010000050B /* Preview Content */,
-			);
-			path = BirdVault;
-			sourceTree = "<group>";
-		};
-		A1B2C3D4E5F60001000005DD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A1B2C3D4E5F60001000002BB /* Bird.swift */,
-				A1B2C3D4E5F60001000002CC /* BirdSighting.swift */,
-				A1B2C3D4E5F60001000002DD /* UserProfile.swift */,
-				A1B2C3D4E5F60001000002EE /* SocialPost.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		A1B2C3D4E5F60001000005EE /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				A1B2C3D4E5F60001000002FF /* BirdDataService.swift */,
-				A1B2C3D4E5F600010000020A /* LocationManager.swift */,
-				A1B2C3D4E5F600010000020B /* SocialService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		A1B2C3D4E5F60001000005FF /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				A1B2C3D4E5F600010000020C /* BirdVaultTheme.swift */,
-			);
-			path = Theme;
-			sourceTree = "<group>";
-		};
 		A1B2C3D4E5F600010000050A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +85,14 @@
 				A1B2C3D4E5F60001000005A3 /* Onboarding */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F600010000050B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60001000002AB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		A1B2C3D4E5F600010000050C /* Components */ = {
@@ -214,12 +162,64 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		A1B2C3D4E5F600010000050B /* Preview Content */ = {
+		A1B2C3D4E5F60001000005AA = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3D4E5F60001000002AB /* Preview Assets.xcassets */,
+				A1B2C3D4E5F60001000005BB /* BirdVault */,
+				A1B2C3D4E5F60001000005CC /* Products */,
 			);
-			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60001000005BB /* BirdVault */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60001000002AA /* BirdVaultApp.swift */,
+				A1B2C3D4E5F60001000005DD /* Models */,
+				A1B2C3D4E5F60001000005EE /* Services */,
+				A1B2C3D4E5F60001000005FF /* Theme */,
+				A1B2C3D4E5F600010000050A /* Views */,
+				A1B2C3D4E5F60001000002A9 /* Assets.xcassets */,
+				A1B2C3D4E5F60001000002AC /* Info.plist */,
+				A1B2C3D4E5F600010000050B /* Preview Content */,
+			);
+			path = BirdVault;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60001000005CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60001000003AA /* BirdVault.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60001000005DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60001000002BB /* Bird.swift */,
+				A1B2C3D4E5F60001000002CC /* BirdSighting.swift */,
+				A1B2C3D4E5F60001000002DD /* UserProfile.swift */,
+				A1B2C3D4E5F60001000002EE /* SocialPost.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60001000005EE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60001000002FF /* BirdDataService.swift */,
+				A1B2C3D4E5F600010000020A /* LocationManager.swift */,
+				A1B2C3D4E5F600010000020B /* SocialService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60001000005FF /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F600010000020C /* BirdVaultTheme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +266,7 @@
 				en,
 				Base,
 			);
-			mainGroup = A1B2C3D4E5F60001000005AA /* = root group */;
+			mainGroup = A1B2C3D4E5F60001000005AA;
 			productRefGroup = A1B2C3D4E5F60001000005CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -447,9 +447,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BirdVault/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YFXZ6WNN53;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BirdVault/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BirdVault;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -462,7 +462,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.birdvault.app;
+				PRODUCT_BUNDLE_IDENTIFIER = co.brevinb.birdvault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -481,9 +481,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BirdVault/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YFXZ6WNN53;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BirdVault/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BirdVault;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -496,7 +496,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.birdvault.app;
+				PRODUCT_BUNDLE_IDENTIFIER = co.brevinb.birdvault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

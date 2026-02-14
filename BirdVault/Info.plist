@@ -2,13 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSCameraUsageDescription</key>
-    <string>BirdVault needs camera access to photograph birds you discover in the wild.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>BirdVault needs photo library access to save and select bird photos.</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>BirdVault uses your location to show nearby birds and mark where you spotted them on the map.</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>BirdVault uses your location to suggest nearby birds and record sighting locations.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>BirdVault needs camera access to photograph birds you discover in the wild.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>BirdVault uses your location to suggest nearby birds and record sighting locations.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>BirdVault uses your location to show nearby birds and mark where you spotted them on the map.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>BirdVault needs photo library access to save and select bird photos.</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
 </dict>
 </plist>
