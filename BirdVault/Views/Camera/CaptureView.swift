@@ -18,7 +18,12 @@ struct CaptureView: View {
     @State private var notes = ""
     @State private var showMascotTip = true
 
+    // Bird detection state
+    @State private var detectionResults: [BirdDetectionResult] = []
+    @State private var isDetecting = false
+
     private let birdService = BirdDataService.shared
+    private let detectionService = BirdDetectionService.shared
 
     var body: some View {
         NavigationStack {
@@ -27,7 +32,7 @@ struct CaptureView: View {
                     // Mascot tip
                     if showMascotTip {
                         MascotBubbleView(
-                            message: "Snap a photo of a bird, then tell me what species it is. I'll log it in your Pokédex with the location and everything!",
+                            message: "Snap a photo and I'll try to identify the bird for you! You can also pick the species manually if I get it wrong.",
                             showDismiss: true,
                             onDismiss: { withAnimation { showMascotTip = false } }
                         )
@@ -77,6 +82,8 @@ struct CaptureView: View {
                             withAnimation {
                                 capturedImageData = nil
                                 selectedBird = nil
+                                detectionResults = []
+                                isDetecting = false
                             }
                         } label: {
                             Image(systemName: "xmark.circle.fill")
@@ -130,6 +137,10 @@ struct CaptureView: View {
                 }
             }
         }
+        .onChange(of: capturedImageData) { _, newData in
+            guard let data = newData else { return }
+            runDetection(on: data)
+        }
     }
 
     private var birdSelectionSection: some View {
@@ -138,6 +149,7 @@ struct CaptureView: View {
                 .font(.headline)
 
             if let bird = selectedBird {
+                // Bird has been selected (either from detection or manually)
                 HStack(spacing: 12) {
                     Text(emojiForBird(bird))
                         .font(.largeTitle)
@@ -161,20 +173,116 @@ struct CaptureView: View {
                     .font(.subheadline)
                 }
                 .cardStyle(padding: 12)
-            } else {
-                Button {
-                    showingBirdPicker = true
-                } label: {
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                        Text("Search for the bird species")
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                    }
-                    .foregroundStyle(.secondary)
+            } else if isDetecting {
+                // Detection in progress
+                HStack(spacing: 12) {
+                    ProgressView()
+                    Text("Analyzing photo...")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
                 }
-                .cardStyle(padding: 14)
+                .frame(maxWidth: .infinity)
+                .cardStyle(padding: 16)
+            } else if !detectionResults.isEmpty {
+                // Show detection suggestions
+                VStack(alignment: .leading, spacing: 8) {
+                    Label("Suggestions", systemImage: "sparkles")
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(BirdVaultTheme.warmAmber)
+
+                    ForEach(detectionResults) { result in
+                        Button {
+                            withAnimation {
+                                selectedBird = result.bird
+                            }
+                        } label: {
+                            HStack(spacing: 10) {
+                                Text(emojiForBird(result.bird))
+                                    .font(.title3)
+                                    .frame(width: 40, height: 40)
+                                    .background(
+                                        BirdVaultTheme.colorForRarity(result.bird.rarityTier).opacity(0.12),
+                                        in: RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    )
+
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(result.bird.commonName)
+                                        .font(.subheadline.weight(.medium))
+                                        .foregroundStyle(.primary)
+                                    Text(result.bird.scientificName)
+                                        .font(.caption2)
+                                        .foregroundStyle(.secondary)
+                                        .italic()
+                                }
+
+                                Spacer()
+
+                                Text(confidenceLabel(result.confidence))
+                                    .font(.caption.weight(.medium))
+                                    .foregroundStyle(confidenceColor(result.confidence))
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
+                                    .background(
+                                        confidenceColor(result.confidence).opacity(0.12),
+                                        in: Capsule()
+                                    )
+                            }
+                        }
+                        .cardStyle(padding: 10)
+                    }
+
+                    // Manual search fallback
+                    Button {
+                        showingBirdPicker = true
+                    } label: {
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                            Text("Not here? Search manually")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                    }
+                    .cardStyle(padding: 12)
+                }
+            } else {
+                // No results / detection didn't find anything
+                VStack(spacing: 8) {
+                    Button {
+                        showingBirdPicker = true
+                    } label: {
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                            Text("Search for the bird species")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                        .foregroundStyle(.secondary)
+                    }
+                    .cardStyle(padding: 14)
+                }
             }
+        }
+    }
+
+    // MARK: - Detection Helpers
+
+    private func confidenceLabel(_ confidence: Float) -> String {
+        switch confidence {
+        case 0.5...: return "Strong"
+        case 0.2..<0.5: return "Good"
+        case 0.05..<0.2: return "Maybe"
+        default: return "Low"
+        }
+    }
+
+    private func confidenceColor(_ confidence: Float) -> Color {
+        switch confidence {
+        case 0.5...: return .green
+        case 0.2..<0.5: return .blue
+        case 0.05..<0.2: return .orange
+        default: return .gray
         }
     }
 
@@ -305,9 +413,31 @@ struct CaptureView: View {
     private func resetForm() {
         capturedImageData = nil
         selectedBird = nil
+        detectionResults = []
+        isDetecting = false
         isMale = true
         notes = ""
         selectedPhotoItem = nil
+    }
+
+    private func runDetection(on imageData: Data) {
+        isDetecting = true
+        detectionResults = []
+        selectedBird = nil
+
+        Task {
+            let results = await detectionService.detectBird(from: imageData)
+            await MainActor.run {
+                withAnimation {
+                    detectionResults = results
+                    isDetecting = false
+                    // Auto-select if there's a high-confidence match
+                    if let top = results.first, top.confidence > 0.5 {
+                        selectedBird = top.bird
+                    }
+                }
+            }
+        }
     }
 
     private func compressImage(_ data: Data?) -> Data? {
